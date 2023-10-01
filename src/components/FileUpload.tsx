@@ -8,8 +8,6 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-// https://github.com/aws/aws-sdk-js-v3/issues/4126
-
 const FileUpload = () => {
   const router = useRouter();
   const [uploading, setUploading] = React.useState(false);
@@ -36,7 +34,7 @@ const FileUpload = () => {
       const file = acceptedFiles[0];
       if (file.size > 10 * 1024 * 1024) {
         // bigger than 10mb!
-        toast.error("File too large");
+        toast.error("Filen är för stor!");
         return;
       }
 
@@ -50,11 +48,11 @@ const FileUpload = () => {
         }
         mutate(data, {
           onSuccess: ({ chat_id }) => {
-            toast.success("Chat created!");
+            toast.success("Chatten är skapad!");
             router.push(`/chat/${chat_id}`);
           },
           onError: (err) => {
-            toast.error("Error creating chat");
+            toast.error("Något gick fel, vi kollar in på det!");
             console.error(err);
           },
         });
@@ -79,13 +77,13 @@ const FileUpload = () => {
             {/* loading state */}
             <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
             <p className="mt-2 text-sm text-slate-400">
-              Spilling Tea to GPT...
+              Analyserar din PDF...
             </p>
           </>
         ) : (
           <>
             <Inbox className="w-10 h-10 text-blue-500" />
-            <p className="mt-2 text-sm text-slate-400">Drop PDF Here</p>
+            <p className="mt-2 text-sm text-slate-400">Släpp din PDF här</p>
           </>
         )}
       </div>

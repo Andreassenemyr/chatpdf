@@ -22,7 +22,7 @@ const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
       <Link href="/">
         <Button className="w-full border-dashed border-white border">
           <PlusCircle className="mr-2 w-4 h-4" />
-          New Chat
+          Ny chatt
         </Button>
       </Link>
 

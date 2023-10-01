@@ -25,7 +25,7 @@ export default async function Home() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center">
-            <h1 className="mr-3 text-5xl font-semibold">Chat with any PDF</h1>
+            <h1 className="mr-3 text-5xl font-semibold">Chatta med din PDF</h1>
             <UserButton afterSignOutUrl="/" />
           </div>
 
@@ -34,7 +34,7 @@ export default async function Home() {
               <>
                 <Link href={`/chat/${firstChat.id}`}>
                   <Button>
-                    Go to Chats <ArrowRight className="ml-2" />
+                    Gå till chatter <ArrowRight className="ml-2" />
                   </Button>
                 </Link>
                 <div className="ml-3">
@@ -45,8 +45,8 @@ export default async function Home() {
           </div>
 
           <p className="max-w-xl mt-1 text-lg text-slate-600">
-            Join millions of students, researchers and professinals to instantly
-            anwer questions and understand research with AI
+            Sluta leta i dina PDFs med Ctrl + F, ställ frågor direkt om din PDF och 
+            få faktiska svar på dina frågor!
           </p>
 
           <div className="w-full mt-4">
@@ -55,7 +55,7 @@ export default async function Home() {
             ) : (
               <Link href="/sign-in">
                 <Button>
-                  Login to get Started!
+                  Logga in för att chatta!
                   <LogIn className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
